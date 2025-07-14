@@ -10,17 +10,39 @@
         <button>Покупателям</button>
         <button>Владельцам</button>
         <span>
-            ________________________________________  
-        </span>
-        <span>
             <a href="#" onclick="showMap()" class="map-link">
                 <img src="https://maps.google.com/mapfiles/ms/icons/red-dot.png" alt="map icon" class="map-icon" />
             </a> 
             
-            г. Минск, пр. Независимости, 202/1       +375 (44) 561-77-77
+            г. Минск, пр. Независимости, 202/1       
         </span>
+        <button>+375 (44) 561-77-77</button> 
         <button>Заказать звонок</button>
     </div>
+    <style>
+    .top-bar {
+        display: flex;            /* размещение элементов в ряд */
+        align-items: center;      /* выравнивание по вертикали */
+        gap: 12px;                /* промежутки между элементами */
+        background-color: #f2f2f2;/* светло-серый фон */
+        padding: 10px 20px;       /* отступы внутри */
+        border-radius: 8px;       /* скруглённые углы */
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+    }
+
+    .top-bar button {
+        padding: 6px 12px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .top-bar span {
+        margin-left: 400px; /* прижать к правому краю */
+        font-weight: bold;
+    }
+
+    </style>
     <div>
         <button>LOGOTIP TOYOTA</button>
         <button>Модельный ряд</button>
