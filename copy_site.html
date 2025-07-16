@@ -1,81 +1,114 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru"> <!--задаем распознование языка для разных приложений и браузеров-->
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> <!--задаем расспознование символов/кодов символов-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--задаем стандарт отоброжения страницы на экране устройств-->
     <title>Учебная копия сайта Тойота</title>
 </head>
-<body>
+
+<body style="font-family: Arial, sans-serif" ;>
     <div class="top-bar">
-        <button>Покупателям</button>
-        <button>Владельцам</button>
-        <span>
-            <a href="#" onclick="showMap()" class="map-link">
-                <img src="https://maps.google.com/mapfiles/ms/icons/red-dot.png" alt="map icon" class="map-icon" />
-            </a> 
-            
-            г. Минск, пр. Независимости, 202/1       
-        </span>
-        <button>+375 (44) 561-77-77</button> 
-        <button>Заказать звонок</button>
+        <button type="button" class="nav-button active">Покупателям</button>
+        <button type="button" class="nav-button">Владельцам</button>
+        <button onclick="showMap()" class="map-button" type="button" style="margin-left: 350px;">
+            <img src="photo/gray-map-marker-drop.png" alt="map icon" />
+            г. Минск, пр. Независимости, 202/1
+        </button>
+        <button type="button" class="nav-button" style="color:black;">+375 (44) 561-77-77</button>
+        <button type="button" class="nav-button" style="margin-left: 35px;">Заказать звонок</button>
     </div>
+
     <style>
-    .top-bar {
-        display: flex;            /* размещение элементов в ряд */
-        align-items: center;      /* выравнивание по вертикали */
-        gap: 12px;                /* промежутки между элементами */
-        background-color: #f2f2f2;/* светло-серый фон */
-        padding: 10px 20px;       /* отступы внутри */
-        border-radius: 8px;       /* скруглённые углы */
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-    }
+        .top-bar {        /* по классу топбар(используем CSS-селектор) отделяем принадлжещие ему элементы для обработки в CSS*/
+            display: flex;/*создаем контейнер флекс который дает возможность проводить выравнивание по вертикали или горизонтали*/
+            align-items: center;/*выравниваем по центру все элементы внутри контейнера топбар*/
+            gap: 12px;/*задаем отступ друг от друга для всех лементов блока топбар*/
+            background-color: #f2f2f2; /*щадаем цвет фона*/
+            padding: 0px 20px;/*задаем отступы от краев контейнера топбар*/
+            border-radius: 0px;/*задаем округлость краев контейнера*/
+            color: grey;/*задаем цвет шрифта*/ 
 
-    .top-bar button {
-        padding: 6px 12px;
-        font-size: 14px;
-        cursor: pointer;
-    }
+        }
 
-    .top-bar span {
-        margin-left: 400px; /* прижать к правому краю */
-        font-weight: bold;
-    }
+        .top-bar .nav-button { /*выбираем кнопки содержащиеся в классе топбар, по классу навбутон называется CSS-селектор*/
+            padding: 6px 12px;/*задаем отступы от краев контейнера буттон*/
+            font-size: 14px;/*определяем размер шрифта, размер букв*/
+            border: none;/*убираем рамку вокруг кнопки*/
+            color: grey; /*определение цвета шрифта*/
+            cursor: pointer;/*изменение курсора на руку с пальцем*/
+        }
 
+        .top-bar .nav-button.active {
+            text-decoration: underline;/*назначение подчеркивания*/
+            text-decoration-color: red;/* изменение цвета подчеркивания */
+            text-underline-offset: 10px; /* смещение подчеркивания вниз */
+            text-decoration-thickness: 3px;
+            /* толщина линии */
+            color: black;
+        }
+
+        .nav-button:hover {
+            color: black;
+            /* При наведении мыши текст становится красным */
+        }
+
+        .map-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px;
+            border: none;
+            background-color: #f2f2f2;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            color: grey;
+        }
+
+        .map-button img {
+            width: 18px;
+            height: 18px;
+        }
     </style>
     <div class="menu">
-        <button>LOGOTIP TOYOTA</button>
+        <button><img src="photo/5.png" alt="LOGOTIP TOYOTA" /></button>
         <button>Модельный ряд</button>
         <button>Специальные предложения</button>
         <button>Финансовые предложения</button>
-        <button>Ещё</button>
-        <button>LOGOTIP ATLANT M</button>
+        <button style="margin-left: 170px" ;>Ещё</button>
+        <button style="margin-left: 20px;"><img src="photo/6.png" alt="LOGOTIP ATLANT M" /></button>
     </div>
     <style>
-    .menu {
-        display: flex;            /* размещение элементов в ряд */
-        align-items: center;      /* выравнивание по вертикали */
-        gap: 24px;                /* промежутки между элементами */
-        background-color: #f2f2f2;/* светло-серый фон */
-        padding: 10px 20px;       /* отступы внутри */
-        border-radius: 8px;       /* скруглённые углы */
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-    }
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            background-color: white;
+            /* светло-серый фон */
+            padding: 10px 20px;
+            /* отступы внутри */
+            border-radius: 8px;
+            /* скруглённые углы */
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
 
-    .menu button {
-        padding: 6px 12px;
-        font-size: 14px;
-        cursor: pointer;
-    }
-
+        .menu button {
+            padding: 6px 12px;
+            font-size: 14px;
+            border: none;
+            background-color: white;
+            cursor: pointer;
+        }
     </style>
     <div>
-        <img src="D:\mycode\Kaf_task\photo\1.png" alt=" первое фото" /> 
-        <img src="D:\mycode\Kaf_task\photo\2.png" alt=" второе фото" />
+        <img src="photo/1.png" alt=" первое фото" />
+        <img src="photo/2.png" alt=" второе фото" />
     </div>
 
 
 </body>
 >>>>>>> 2439d39631b3ca18a6c32fd1ecc283291a26018b
+
 </html>
